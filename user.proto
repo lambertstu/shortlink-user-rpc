@@ -113,10 +113,14 @@ message DeleteUserResponse{
 }
 
 message GetGroupRequest{
-  string gid = 1;
+  string username = 1;
 }
 
 message GetGroupResponse{
+  repeated GroupData data = 1;
+}
+
+message GroupData{
   string gid = 1;
   string name = 2;
   string username = 3;
@@ -137,5 +141,5 @@ service Group{
   rpc CreateGroup(CreateGroupRequest) returns(CreateGroupResponse);
   rpc UpdateGroup(UpdateGroupRequest) returns(UpdateGroupResponse);
   rpc DeleteGroup(DeleteGroupRequest) returns(DeleteGroupResponse);
-  rpc GetGroupByGid(GetGroupRequest) returns(GetGroupResponse);
+  rpc GetGroupByUsername(GetGroupRequest) returns(GetGroupResponse);
 }

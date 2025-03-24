@@ -38,7 +38,7 @@ func (s *GroupServer) DeleteGroup(ctx context.Context, in *user.DeleteGroupReque
 	return l.DeleteGroup(in)
 }
 
-func (s *GroupServer) GetGroupByGid(ctx context.Context, in *user.GetGroupRequest) (*user.GetGroupResponse, error) {
-	l := grouplogic.NewGetGroupByGidLogic(ctx, s.svcCtx)
-	return l.GetGroupByGid(in)
+func (s *GroupServer) GetGroupByUsername(ctx context.Context, in *user.GetGroupRequest) (*user.GetGroupResponse, error) {
+	l := grouplogic.NewGetGroupByUsernameLogic(ctx, s.svcCtx)
+	return l.GetGroupByUsername(in)
 }
